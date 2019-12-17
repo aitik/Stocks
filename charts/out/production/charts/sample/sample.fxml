@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="700.0" />
+      <TabPane fx:id="tabpane" onKeyPressed="#handleKeyPress" prefHeight="690.0" prefWidth="971.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Charts">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="start" layoutX="473.0" layoutY="44.0" mnemonicParsing="false" onAction="#newgame" text="Start" />
+                        <Button fx:id="nextday" layoutX="786.0" layoutY="581.0" mnemonicParsing="false" onAction="#nd" text="Next day" />
+                        <LineChart fx:id="chart" createSymbols="false" layoutX="168.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks">
+                          <xAxis>
+                            <CategoryAxis fx:id="days" label="Days" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart1" createSymbols="false" layoutX="168.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days1" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis1" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart2" createSymbols="false" layoutX="169.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days2" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis2" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart3" createSymbols="false" layoutX="169.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days3" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis3" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart4" createSymbols="false" layoutX="168.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days4" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis4" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart5" createSymbols="false" layoutX="168.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days5" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis5" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart6" createSymbols="false" layoutX="169.0" layoutY="81.0" prefHeight="500.0" prefWidth="650.0" title="Stocks" visible="false">
+                           <xAxis>
+                              <CategoryAxis fx:id="days6" label="Days" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis forceZeroInRange="false" side="LEFT" fx:id="xAxis6" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="384.0" layoutY="21.0" prefHeight="31.0" prefWidth="112.0" text="Players">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="playersinfo" layoutX="71.0" layoutY="86.0" prefHeight="513.0" prefWidth="858.0" />
+                        <TextField fx:id="addplayername" layoutX="71.0" layoutY="609.0" prefHeight="25.0" prefWidth="158.0" />
+                        <Button fx:id="addplayer" layoutX="274.0" layoutY="609.0" mnemonicParsing="false" onAction="#addingplayer" text="Add" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+
+            <Tab text="Buy/Sell">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="cmpcb" layoutX="169.0" layoutY="57.0" prefWidth="150.0" />
+                        <Label layoutX="141.0" layoutY="32.0" prefHeight="17.0" prefWidth="136.0" text="Buy:" />
+                        <Label layoutX="14.0" layoutY="61.0" prefHeight="17.0" prefWidth="139.0" text="Company" />
+                        <Label layoutX="14.0" layoutY="100.0" prefHeight="17.0" prefWidth="139.0" text="Amount (max 1000)" />
+                        <TextField fx:id="amountb" layoutX="170.0" layoutY="96.0" />
+                        <Button layoutX="141.0" layoutY="149.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+                        <Label layoutX="434.0" layoutY="61.0" prefHeight="17.0" prefWidth="139.0" text="Company" />
+                        <Label layoutX="573.0" layoutY="32.0" prefHeight="17.0" prefWidth="136.0" text="Sell:" />
+                        <ChoiceBox fx:id="cmpcb1" layoutX="593.0" layoutY="57.0" prefWidth="150.0" />
+                        <Label layoutX="434.0" layoutY="100.0" prefHeight="17.0" prefWidth="139.0" text="Amount (max 1000)" />
+                        <TextField fx:id="amounts" layoutX="594.0" layoutY="96.0" />
+                        <Button layoutX="575.0" layoutY="149.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
+                        <TextField fx:id="addcompanyname" layoutX="14.0" layoutY="595.0" />
+                        <TextField fx:id="addcompanyshare" layoutX="177.0" layoutY="595.0" prefHeight="25.0" prefWidth="60.0" />
+                        <Button fx:id="addcompany" layoutX="251.0" layoutY="595.0" mnemonicParsing="false" onAction="#addingcompany" text="Add company" />
+                        <Label fx:id="buyselllog" layoutX="296.0" layoutY="217.0" prefHeight="17.0" prefWidth="488.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Login">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="276.0" layoutY="103.0" prefHeight="32.0" prefWidth="166.0" text="Login:" />
+                        <TextField fx:id="namelogin" layoutX="276.0" layoutY="135.0" prefHeight="25.0" prefWidth="173.0" promptText="Name" />
+                        <Button layoutX="276.0" layoutY="173.0" mnemonicParsing="false" onAction="#signin" text="Sign in" />
+                        <Button layoutX="390.0" layoutY="173.0" mnemonicParsing="false" onAction="#signup" text="Sign up" />
+                        <Label fx:id="loglogin" layoutX="276.0" layoutY="224.0" prefHeight="17.0" prefWidth="169.0" />
+                     </children></AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ScrollPane prefHeight="690.0" prefWidth="261.0" GridPane.columnIndex="1">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="262.0">
+               <children>
+                  <Accordion fx:id="accordion" layoutX="-1.0" layoutY="-1.0" prefHeight="384.0" prefWidth="261.0">
+                    <panes>
+                      <TitledPane fx:id="titledpane1" animated="false" onMouseClicked="#showchart1" prefHeight="76.0" prefWidth="261.0">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks1" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="207.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff1" layoutX="14.0" layoutY="41.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <graphic>
+                              <ImageView fx:id="image1" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                      </TitledPane>
+                      <TitledPane fx:id="titledpane2" animated="false" onMouseClicked="#showchart2" prefHeight="264.0" prefWidth="261.0">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks2" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="213.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff2" layoutX="14.0" layoutY="41.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <graphic>
+                              <ImageView fx:id="image2" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                      </TitledPane>
+                      <TitledPane fx:id="titledpane3" animated="false" onMouseClicked="#showchart3">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks3" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="225.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff3" layoutX="14.0" layoutY="41.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <graphic>
+                              <ImageView fx:id="image3" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                      </TitledPane>
+                        <TitledPane fx:id="titledpane4" animated="false" onMouseClicked="#showchart4">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks4" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="213.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff4" layoutX="14.0" layoutY="36.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <graphic>
+                              <ImageView fx:id="image4" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="titledpane5" animated="false" onMouseClicked="#showchart5">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks5" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="213.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff5" layoutX="14.0" layoutY="36.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fx:id="image5" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="titledpane6" animated="false" layoutX="10.0" layoutY="110.0" onMouseClicked="#showchart6">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks6" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="213.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff6" layoutX="14.0" layoutY="36.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fx:id="image6" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="titledpane7" animated="false" layoutX="10.0" layoutY="135.0" onMouseClicked="#showchart7" prefHeight="121.0" prefWidth="261.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="stocks7" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="213.0" text="">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diff7" layoutX="14.0" layoutY="36.0" prefHeight="17.0" prefWidth="64.0" text="">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fx:id="image7" fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <Label fx:id="daysl" layoutX="48.0" layoutY="635.0" prefHeight="17.0" prefWidth="128.0" />
+                  <Label fx:id="loggedas" layoutX="48.0" layoutY="618.0" prefHeight="17.0" prefWidth="169.0" text="Logged as:" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</GridPane>
